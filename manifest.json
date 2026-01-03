@@ -1,0 +1,24 @@
+
+{
+  "short_name": "19s",
+  "name": "19 Seconds Survival",
+  "icons": [
+    {
+      "src": "https://placehold.co/192x192/0f172a/4ade80?text=19s&font=montserrat",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://placehold.co/512x512/0f172a/4ade80?text=19s&font=montserrat",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "description": "Survive for 19 seconds to reach legendary status. A minimalist high-stakes dodging game."
+}
