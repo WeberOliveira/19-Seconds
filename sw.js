@@ -1,5 +1,5 @@
 
-const CACHE_NAME = '19s-v1';
+const CACHE_NAME = '19s-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -36,9 +36,16 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Estratégia: Cache first, then network
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(event.request).then((response) => {
+        // Opcional: Adicionar novos requests ao cache dinamicamente
+        return response;
+      });
     })
   );
 });
